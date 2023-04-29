@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bson": "^4.0.0",
     "colors": "^1.4.0",
     "colrs": "^0.0.4",
     "dotenv": "^16.0.3",
