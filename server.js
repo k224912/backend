@@ -52,7 +52,7 @@ const server=app.listen(PORT,console.log(`server Started on PORT 5000 ${PORT}`))
 const io = require("socket.io")(server, {
   pingTimeout: 60000,//after this time it will be inactice
   cors: {
-    origin: "https://effortless-lebkuchen-c024fe.netlify.app/",//http://localhost:3000",
+    origin: "https://effortless-lebkuchen-c024fe.netlify.app",//http://localhost:3000",
   },
 });
 
