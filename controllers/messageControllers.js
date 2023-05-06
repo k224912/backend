@@ -38,8 +38,8 @@ const sendMessage = asyncHandler(async (req, res) => {
   try {
     var message = await Message.create(newMessage);
 
-    message = await message.populate("sender", "name pic")//.execPopulate();//using execPopulate() as we are dealing w
-    message = await message.populate("chat")//.execPopulate();//ith instamnce of that schema not the original scheme itself 
+    message = await message.populate("sender", "name pic").execPopulate();//using execPopulate() as we are dealing w
+    message = await message.populate("chat").execPopulate();//ith instamnce of that schema not the original scheme itself 
     message = await User.populate(message, {//check whether it workd without the execPopulate()
       path: "chat.users",
       select: "name pic email",
