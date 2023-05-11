@@ -46,7 +46,7 @@ app.use(notFound)
 app.use(errorHandler)
 
 
-const PORT = 5000
+const PORT = process.env.PORT 
 const server=app.listen(PORT,console.log(`server Started on PORT  ${PORT}`));
 
 const io = require("socket.io")(server, {
