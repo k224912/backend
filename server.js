@@ -52,7 +52,7 @@ const server=app.listen(port,console.log(`server Started on PORT  5000 ${port}`)
 const io = require("socket.io")(server, {
   pingTimeout: 60000,//after this time it will be inactice
   cors: {
-    origin: "https://unrivaled-praline-4f2703.netlify.app/",//http://localhost:3000",
+    origin: "https://unrivaled-praline-4f2703.netlify.app",//http://localhost:3000",
   },
 });
 
