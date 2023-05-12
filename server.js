@@ -26,20 +26,6 @@ app.use('/api/user',userRoutes)
 app.use('/api/chat',chatRoutes)
 app.use('/api/message',messageRoutes)
 
-//now for deployment
-const __dirname1 = path.resolve();
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "/frontend/build")));
-
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running..");
-  });
-}
 
 //adding two error handling functions
 app.use(notFound)
@@ -52,7 +38,7 @@ const server=app.listen(port,console.log(`server Started on PORT  5000 ${port}`)
 const io = require("socket.io")(server, {
   pingTimeout: 60000,//after this time it will be inactice
   cors: {
-    origin: "https://unrivaled-praline-4f2703.netlify.app/",//http://localhost:3000",
+    origin: "https://unrivaled-praline-4f2703.netlify.app",//http://localhost:3000",
   },
 });
 
